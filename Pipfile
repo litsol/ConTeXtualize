@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pdb_client = {editable = true,hg = "https://scm.cwi.nl/ITF/pdb_client"}
+
+[dev-packages]
+"bobtemplates.gillux" = "*"
+flake8 = "*"
+pylint = "*"
+isort = "*"
+ipython = "*"
+ipdb = "*"
+black = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
