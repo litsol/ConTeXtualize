@@ -1,22 +1,85 @@
-=======
-wieishet
-=======
+========
+WIEISHET
+========
 
 Typeset information from CWI's public accessible people database (PDB).
 
-FIXME: provide a two paragraphs summary of this package
+This is a simple example of how to retrieve information from a
+database, wrap the data in a template, write the template to file and
+compile the file into a PDF document with ConTeXt.
 
-Full documentation and API
-==========================
+It is also an example of how to structure a complete Python module.
 
-FIXME: Provide the URL of the documentation (@ readthedocs.org ?)
+
+Installation
+============
+
+This GIT repository contains a Pipfile that names the Python packages
+used to run and develop this software. Run the following commands to
+instantiate a virtual environment with these packages and install the
+'wieishet' console-script.
+
+.. code:: console
+
+  $ export PIPENV_VENV_IN_PROJECT=True
+  $ pipenv install
+  $ pipenv shell
+  $ cd wieishet
+  $ python setup.py install
+
+
+The 'wieishet' console-script uses ConTeXt to typeset its data. If you
+need to install ConTeXt, you find the necessary instructions at:
+`Install CONTEXT LMTX <http://pragma-ade.com/install.htm>`_.
+
+If your are CWI you can avail yourself of a pre-installed ConTeXt
+distribution. Initialize it with the followint command:
+
+.. code:: console
+
+  $ source /opt/sw/context/tex/setuptex
+
+
+PDB access
+==========
+
+You have to be behind the CWI firewall to reach the people database;
+which means you either have to be at CWI or have tunneled into a CWI
+desktop machine. If you have established a VPN connection to CWI from
+home, your machine at home is effectively behind the CWI firewall.
+
+
+Running the script
+===========================
+Now that everything is in place you can run the console-script like this:
+
+.. code:: console
+
+  $ whoisit aggelen
+
+If all goes well ConTeXt will display a line something like this::
+
+  This is LuaTeX, Version 1.11.2 (TeX Live 2020/dev)
+   system commands enabled.
+
+Afterwards, you should find a PDF file whose name is composed of the
+last name of the individual you choose and the date the file was
+created, e.g.,::
+
+  Aggelen-04-August-2020.pdf
+
+Compare the PDF contents with the result of running the PDB command
+line tool available on every CWI desktop machine.
+
+.. code:: console
+
+  $ cwi aggelen
+
 
 Developer notes
 ===============
 
-Please use a virtualenv to maintain this package, but I should not need to say that.
-
-Grab the source from the SCM repository:
+You can modify the code following the usual procecures.
 
 .. code:: console
 
@@ -31,19 +94,9 @@ Run the tests:
   $ python run_tests.py
 
 
-Links
-=====
+*FINIS*
 
-FIXME: Provide real links
-
-Project home page
-
-  http://www.mystuff.com/project
-
-Source code
-
-  http://www.mystuff.com/source
-
-Issues tracker
-
-  http://www.mystuff.com/issues
+.. Finis
+.. Local Variables:
+.. compile-command: "rst2html README.rst README.html && tidy -im README.html"
+.. End:
