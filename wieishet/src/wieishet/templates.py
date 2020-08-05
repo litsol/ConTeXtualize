@@ -20,8 +20,11 @@ class PDB:  # pylint: disable=R0902
     department: str
     email: str
     account: str
+    image: str
     template: str = (
-        r"""\starttext
+        r"""\setuppagenumbering[state=off]
+              \starttext
+              \externalfigure[https://www.cwi.nl/intranet%s]
               \starttabulate[|r|l|]
                 \NC Naam/Name \EQ {%s} \NC\NR
                 \NC Roepnaam/Given name \EQ {%s} \NC\NR
@@ -39,13 +42,15 @@ class PDB:  # pylint: disable=R0902
         populates the template with the data.
         """
         return self.template % (
+            self.image,
             self.fullname,
             self.firstname,
             self.room,
             self.phone,
             self.department,
             self.email,
-            self.account)
+            self.account,
+        )
 
 
 # Finis

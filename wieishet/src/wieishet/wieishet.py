@@ -3,22 +3,28 @@
 
 """Typeset PDB Information"""
 
+# Standard modules
 import argparse
 import datetime
 import logging
 import os
+import pprint
 import subprocess
 import sys
-
 # from ipdb import set_trace
+
+# Third party modules
 from pdb_client.api import get_person
 from pdb_client.exceptions import NotFound
 
-from wieishet.templates import PDB  # pylint: disable=E0611
+# Local modules
+from templates import PDB
 
+# Configure Pretty Printing and Logging
+pp = pprint.PrettyPrinter(indent=4)
 logging.Formatter()
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s" , level=logging.INFO
 )
 
 
@@ -54,6 +60,7 @@ class Wieishet:
         """
         try:
             person = get_person(self.who)
+            logging.info(pprint.pformat(person))
         except NotFound:
             raise ValueError(f"I'm sorry but {self.who} isn't in the people database.")
         self.person = PDB(
@@ -65,6 +72,7 @@ class Wieishet:
             person["contract_set"][0]["department"]["name"],
             person["email"],
             person["account_set"][0]["login"],
+            person["image_uri"]
         )
 
     def compose(self):

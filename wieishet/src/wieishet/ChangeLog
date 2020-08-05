@@ -1,0 +1,7 @@
+2020-08-05  Michael Guravage  <michael@alcibiades>
+
+	* wieishet.py: Added logging.
+
+	* templates.py (PDB): Drop the page number; add a photo.
+
+	* __init__.py: Tweak sys.path to facilitate relative import paths in Python 3.6 and up.
