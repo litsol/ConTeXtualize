@@ -24,7 +24,7 @@ from templates import PDB
 pp = pprint.PrettyPrinter(indent=4)
 logging.Formatter()
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s" , level=logging.INFO
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s" , level=logging.ERROR
 )
 
 
