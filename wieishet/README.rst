@@ -11,6 +11,18 @@ compile the file into a PDF document with ConTeXt.
 It is also an example of how to structure a complete Python module.
 
 
+Dependencies
+============
+
+You will need the following pieces of software to continue:
+
+1. ConTeXt
+2. Git
+3. Mercurial (hg)
+4. pipenv
+5. Python3
+
+
 Installation
 ============
 
@@ -55,7 +67,7 @@ Now that everything is in place you can run the console-script like this:
 
 .. code:: console
 
-  $ whoisit aggelen
+  $ wieishet aggelen
 
 If all goes well ConTeXt will display a line something like this::
 
