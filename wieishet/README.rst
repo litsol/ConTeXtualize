@@ -60,6 +60,9 @@ which means you either have to be at CWI or have tunneled into a CWI
 desktop machine. If you have established a VPN connection to CWI from
 home, your machine at home is effectively behind the CWI firewall.
 
+If you nave no access to the PDB, uncomment the line `from IRL import
+MGE`. This will obviate the PDB and instead a mock data structure.
+
 
 Running the script
 ===========================

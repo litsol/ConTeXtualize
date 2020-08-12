@@ -1,3 +1,9 @@
+2020-08-12  Michael Guravage  <michael@alcibiades>
+
+	* IRL.py: New file with mock person data
+
+	* wieishet.py: Use mocked person data if IRL imported.
+
 2020-08-05  Michael Guravage  <michael@alcibiades>
 
 	* wieishet.py: Added logging.

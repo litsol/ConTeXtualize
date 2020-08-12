@@ -19,12 +19,13 @@ from pdb_client.exceptions import NotFound
 
 # Local modules
 from templates import PDB
+# from IRL import MGE
 
 # Configure Pretty Printing and Logging
 pp = pprint.PrettyPrinter(indent=4)
 logging.Formatter()
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s" , level=logging.ERROR
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.ERROR
 )
 
 
@@ -59,7 +60,12 @@ class Wieishet:
         dataclass object with selected values
         """
         try:
-            person = get_person(self.who)
+            # Query the PDB, or use a mock user if IRL is imported.
+            person = (
+                get_person(self.who)
+                if "IRL" not in sys.modules
+                else MGE  # NOQA: F821 pylint:disable=E0602
+            )
             logging.info(pprint.pformat(person))
         except NotFound:
             raise ValueError(f"I'm sorry but {self.who} isn't in the people database.")
