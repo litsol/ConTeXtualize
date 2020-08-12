@@ -61,7 +61,7 @@ desktop machine. If you have established a VPN connection to CWI from
 home, your machine at home is effectively behind the CWI firewall.
 
 If you nave no access to the PDB, uncomment the line ``from IRL import
-MGE``. This will obviate the PDB and instead use mock data structure.
+MGE``. This will obviate the PDB and instead use a mock data structure.
 
 
 Running the script
